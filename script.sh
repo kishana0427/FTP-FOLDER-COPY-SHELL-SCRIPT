@@ -35,6 +35,45 @@ wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
 chmod 777 -R /home/mrcetece/Tanner_EDA/
 
 
+Example:1-1(With parent/read user input into a variable in Bash)
+===============================================================
+===============================================================
+#!/bin/bash
+
+# FTP server details
+FTP_SERVER="mentorserver"
+FTP_USER="mrcetece"
+#FTP_PASS="ece@mrcet"
+read -p "Enter Password for $FTP_SERVER: " FTP_PASS
+REMOTE_DIR="/Tanner_EDA/"
+LOCAL_DIR="/home/mrcetece/Tanner_EDA/"
+
+# Use wget to download the folder recursively
+wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
+     -r -nH --cut-dirs=1 --no-parent \
+     -P "$LOCAL_DIR" "ftp://$FTP_SERVER$REMOTE_DIR"
+chmod 777 -R /home/mrcetece/Tanner_EDA/
+
+
+Example:1-2(With parent/read user input into a variable securly in Bash)
+=======================================================================
+=======================================================================
+#!/bin/bash
+
+# FTP server details
+FTP_SERVER="mentorserver"
+FTP_USER="mrcetece"
+#FTP_PASS="ece@mrcet"
+read -sp "Enter Password for $FTP_SERVER: " FTP_PASS
+REMOTE_DIR="/Tanner_EDA/"
+LOCAL_DIR="/home/mrcetece/Tanner_EDA/"
+
+# Use wget to download the folder recursively
+wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
+     -r -nH --cut-dirs=1 --no-parent \
+     -P "$LOCAL_DIR" "ftp://$FTP_SERVER$REMOTE_DIR"
+chmod 777 -R /home/mrcetece/Tanner_EDA/
+
 
 Example:2(Without parent)
 ========================
