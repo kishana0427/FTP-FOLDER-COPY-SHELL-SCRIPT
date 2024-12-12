@@ -15,9 +15,30 @@ wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
      -r -nH --cut-dirs=1 --no-parent \
      -P "$LOCAL_DIR" "ftp://$FTP_SERVER$REMOTE_DIR"
 
+Example:1(With parent)
+======================
+======================
 
-Example:
-======
+#!/bin/bash
+
+# FTP server details
+FTP_SERVER="mentorserver"
+FTP_USER="mrcetece"
+FTP_PASS="ece@mrcet"
+REMOTE_DIR="/home/mrceteceTanner_EDA/"
+LOCAL_DIR="/home/mrcetece/Tanner_EDA/"
+
+# Use wget to download the folder recursively
+wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
+     -r -nH --cut-dirs=1  \
+     -P "$LOCAL_DIR" "ftp://$FTP_SERVER$REMOTE_DIR"
+chmod 777 -R /home/mrcetece/Tanner_EDA/
+
+
+
+Example:2(Without parent)
+========================
+========================
 
 #!/bin/bash
 
