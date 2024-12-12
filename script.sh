@@ -32,6 +32,7 @@ LOCAL_DIR="/home/mrcetece/Tanner_EDA/"
 wget --ftp-user="$FTP_USER" --ftp-password="$FTP_PASS" \
      -r -nH --cut-dirs=1 --no-parent \
      -P "$LOCAL_DIR" "ftp://$FTP_SERVER$REMOTE_DIR"
+chmod 777 -R /home/mrcetece/Tanner_EDA/
 
 
 
