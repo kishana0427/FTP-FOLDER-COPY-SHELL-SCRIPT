@@ -1,0 +1,2 @@
+export TANNER_PATH="/home/MentorGraphics/tanner/tanner"
+export PATH="${PATH}:/home/MentorGraphics/tanner/tanner/bin"
